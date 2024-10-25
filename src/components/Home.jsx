@@ -36,7 +36,7 @@ const Nav = () => {
             behavior: "smooth",
           });
         }}
-        className="flex items-center gap-1  p-2 rounded-lg  text-black text-md  font-semibold tracking-wide"
+        className="flex items-center gap-1 p-2 rounded-lg text-black text-lg font-semibold tracking-wide"
       >
         About Us <FiArrowRight />
       </button>
@@ -53,9 +53,7 @@ const Hero = () => {
       className="relative w-full"
     >
       <CenterImage />
-
       <ParallaxImages />
-
       <div className="absolute bottom-0 left-0 right-0 h-96 bg-gradient-to-b from-zinc-950/0 to-zinc-950" />
     </div>
   );
@@ -101,7 +99,7 @@ const ParallaxImages = () => {
     <div className="mx-auto max-w-5xl px-4 pt-[200px]">
       <ParallaxImg
         src="https://images.unsplash.com/photo-1484600899469-230e8d1d59c0?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-        alt="And example of a space launch"
+        alt="An example of a space launch"
         start={-200}
         end={200}
         className="w-1/3"
@@ -136,7 +134,7 @@ const ParallaxImg = ({ className, alt, src, start, end }) => {
 
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: [`${start}px end`, `end ${end * -1}px`],
+    offset: [`${start}px`, `${end * -1}px`],
   });
 
   const opacity = useTransform(scrollYProgress, [0.75, 1], [1, 0]);
@@ -166,12 +164,14 @@ const Schedule = () => {
         initial={{ y: 48, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
         transition={{ ease: "easeInOut", duration: 0.75 }}
-        className="mt-10 mb-10 text-7xl font-black uppercase text-black"
+        className="mb-20 text-4xl font-black uppercase text-black"
       >
         SYNERGY1
       </motion.h1>
-      <h1 className="tracking-wider text-5xl font-bold">Smart. Sustainable. Simple.</h1>
-      <p className="mt-5 mb-5 text-lg font-semibold tracking-wide ">  At Synery, we believe that energy conservation and sustainability can be seamlessly integrated into everyday life. Our innovative solutions empower households to optimize their energy and water usage without compromising comfort or convenience. By harnessing the latest technology, we offer smart plug-in devices that monitor and manage energy consumption, ensuring that every home contributes to a greener planet. Join us on our journey to make sustainable living simple and accessible for everyone.</p>
+      <h1 className="tracking-wider text-3xl font-bold">Smart. Sustainable. Simple.</h1>
+      <p className="mt-5 mb-5 text-lg font-semibold tracking-wide">
+        At Synery, we believe that energy conservation and sustainability can be seamlessly integrated into everyday life. Our innovative solutions empower households to optimize their energy and water usage without compromising comfort or convenience. By harnessing the latest technology, we offer smart plug-in devices that monitor and manage energy consumption, ensuring that every home contributes to a greener planet. Join us on our journey to make sustainable living simple and accessible for everyone.
+      </p>
     </section>
   );
 };
