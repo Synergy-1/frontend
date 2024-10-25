@@ -1,6 +1,8 @@
 import axios from "axios";
 import { useEffect } from "react";
 import { SmoothScrollHero } from "./components/Home";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Dashboard from "./components/Dashboard";
 
 function App() {
   useEffect(() => {
@@ -11,9 +13,12 @@ function App() {
     getData();
   }, []);
   return (
-    <div className="bg-red-500">
-      <SmoothScrollHero />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<SmoothScrollHero />} />
+        <Route path="/app" element={<Dashboard />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
