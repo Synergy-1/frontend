@@ -1,6 +1,8 @@
 import axios from "axios";
 import { useEffect } from "react";
 import { SmoothScrollHero } from "./components/Home";
+// import Home2 from "./components/Home2";
+// import Navbar from "./components/Navbar";  
 
 function App() {
   useEffect(() => {
@@ -11,8 +13,10 @@ function App() {
     getData();
   }, []);
   return (
-    <div className="bg-red-500">
+    <div>
       <SmoothScrollHero />
+      {/* <Navbar /> */}
+      {/* <Home2 /> */}
     </div>
   );
 }
