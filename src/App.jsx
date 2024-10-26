@@ -1,20 +1,12 @@
-import axios from "axios";
-import { useEffect } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Dashboard from "./components/Dashboard";
+import HomeLayout from "./components/HomeLayout";
 
 function App() {
-  useEffect(() => {
-    async function getData() {
-      const response = await axios.get("http://10.60.201.123/greeting");
-      console.log(response.data);
-    }
-    getData();
-  }, []);
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<SmoothScrollHero />} />
+        <Route path="/" element={<HomeLayout />} />
         <Route path="/app" element={<Dashboard />} />
       </Routes>
     </BrowserRouter>
